@@ -13,8 +13,16 @@ const render = () => {
     const m = n > 0 ? matrix[0].length : 0
 
     let rows = []
+    const headers = []
+    headers.push(`<td id="diag" class="cell axis"> </td>`)
+    for (let x of Array(m).keys()) {
+        headers.push(`<td id="x-${x}" class="cell axis">${x}</td>`)
+    }
+    const header = headers.join('\n')
+    rows.push(`<tr>${header}</tr>`)
     for (let i = 0; i < n; ++i) {
         const cells = []
+        cells.push(`<td id="y-${i}" class="cell axis">${i}</td>`)
         for (let j = 0; j < m; ++j) {
             const cell = matrix[i][j]
             const {color, content} = cell

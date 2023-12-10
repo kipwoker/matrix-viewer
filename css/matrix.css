@@ -6,4 +6,9 @@
 .cell {
     padding: 5px 10px;
     text-align: center;
+    cursor: crosshair;
+}
+
+.axis {
+    font-size: 0.7em;
 }
